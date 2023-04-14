@@ -1,9 +1,14 @@
-import React from 'react'
+import React, {useState} from "react";
+import ApplyMain from "../components/ApplyMain";
+import NavBar from '../components/NavBar'
 
 const Apply = () => {
   return (
-    <div>Apply</div>
-  )
-}
+    <div>
+      <NavBar />
+      <ApplyMain/>
+    </div>
+  );
+};
 
-export default Apply
+export default Apply;

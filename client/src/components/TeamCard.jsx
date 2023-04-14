@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 import { Box } from "@mui/system";
@@ -22,10 +22,10 @@ const ExpandMore = styled((props) => {
     duration: theme.transitions.duration.shortest,
   }),
 }));
-const TeamCard = () => {
-  const [expanded, setExpanded] = React.useState(false);
-  const navigate = useNavigate();
 
+const TeamCard = ({ team }) => {
+  const [expanded, setExpanded] = useState(false);
+  const navigate = useNavigate();
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
@@ -43,15 +43,14 @@ const TeamCard = () => {
           }}
         >
           <Typography variant="h3" fontSize={50}>
-            PINK UNICORN
+            {team.name}
           </Typography>
           <Typography variant="h6" color="#69A988">
-            #FAZER
+            #{team.challenge}
           </Typography>
         </Box>
         <Typography variant="body2" color="text.secondary">
-          Our idea is to design a digital solution for mobile phones, which
-          would focus on helping teenagers access free therapy sessions.
+          {team.description}
         </Typography>
         <Typography
           variant="h5"
@@ -62,13 +61,13 @@ const TeamCard = () => {
         </Typography>
         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
           <Card sx={{ background: "#82C8EF", padding: 5, borderRadius: 5 }}>
-            Desginer
+            {team.rolesNeeded[0]}
           </Card>
           <Card sx={{ background: "#82C8EF", padding: 5, borderRadius: 5 }}>
-            Engineer 1
+            {team.rolesNeeded[1]}
           </Card>
           <Card sx={{ background: "#82C8EF", padding: 5, borderRadius: 5 }}>
-            Engineer 2
+            {team.rolesNeeded[2]}
           </Card>
         </Box>
       </CardContent>
@@ -98,28 +97,33 @@ const TeamCard = () => {
                 variant="outlined"
                 sx={{ background: "#DADADA", padding: 9, borderRadius: 5 }}
               ></Card>
-              <Typography>Jennet</Typography>
-              <Typography>UX Designer</Typography>
+              <Typography>{team.members[0].name}</Typography>
+              <Typography>{team.members[0].role}</Typography>
             </div>
             <div style={{ textAlign: "center" }}>
               <Card
                 variant="outlined"
                 sx={{ background: "#DADADA", padding: 9, borderRadius: 5 }}
               ></Card>
-              <Typography>Selena</Typography>
-              <Typography>UI Designer</Typography>
+              <Typography>{team.members[1].name}</Typography>
+              <Typography>{team.members[1].role}</Typography>
             </div>
-            <div style={{ textAlign: "center", marginBottom: 20}}>
+            <div style={{ textAlign: "center", marginBottom: 20 }}>
               <Card
                 variant="outlined"
                 sx={{ background: "#DADADA", padding: 9, borderRadius: 5 }}
               ></Card>
-              <Typography>Anny</Typography>
-              <Typography>Engineer</Typography>
+              <Typography>{team.members[2].name}</Typography>
+              <Typography>{team.members[2].role}</Typography>
             </div>
-            <Button sx={{ margin: auto }} size="large" variant="contained" onClick={() => {
-                navigate(`/apply`)
-            }}>
+            <Button
+              sx={{ margin: auto }}
+              size="large"
+              variant="contained"
+              onClick={() => {
+                navigate(`/apply`);
+              }}
+            >
               APPLY
             </Button>
           </Box>
