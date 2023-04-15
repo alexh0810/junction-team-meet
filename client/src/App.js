@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Apply from "./pages/Apply";
 import Home from "./pages/Home";
 import NavBar from "./components/NavBar";
@@ -9,8 +9,8 @@ function App() {
     <div className="App">
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/apply" element={<Apply />}></Route>
+        <Route path="/teams" element={<Home />}></Route>
+        <Route path="/teams/apply/:teamId" element={<Apply />}></Route>
       </Routes>
     </div>
   );
