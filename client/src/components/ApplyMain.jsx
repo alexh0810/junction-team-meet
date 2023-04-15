@@ -9,6 +9,7 @@ import TextField from "@mui/material/TextField";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 import { useGetTeam } from "../hooks/useGetTeam";
+import { axiosInstance } from "../config/config";
 
 const ApplyMain = () => {
   const [hasNotSentApplication, setHasNotSentApplication] = useState(true);
@@ -20,8 +21,8 @@ const ApplyMain = () => {
 
   const sendApplication = () => {
     setHasNotSentApplication(false);
-    axios
-      .post(`http://localhost:5500/teams/apply/${teamId}`, {
+    axiosInstance
+      .post(`teams/apply/${teamId}`, {
         teamId: teamId,
         user_id: "123",
         message: message,

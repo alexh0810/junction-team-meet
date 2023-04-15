@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { axiosInstance } from "../config/config";
 
 export const useGetTeam = (teamId) => {
   const [team, setTeam] = useState(undefined);
@@ -8,8 +9,8 @@ export const useGetTeam = (teamId) => {
   useEffect(() => {
     if (teamId) {
       try {
-        axios
-          .get(`http://localhost:5500/teams/${teamId}`)
+        axiosInstance
+          .get(`teams/apply/${teamId}`)
           .then((res) => setTeam(res.data));
       } catch (e) {
         console.log(e);

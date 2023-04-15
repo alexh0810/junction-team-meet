@@ -4,7 +4,7 @@ import { getAllTeams, getTeamById } from "../controllers/teamController.js";
 
 const teams = Router();
 teams.get("", getAllTeams);
-teams.get("/:id", getTeamById)
+teams.get("/apply/:id", getTeamById)
 teams.post("/apply/:id", createNewApplication)
 
 export default teams;

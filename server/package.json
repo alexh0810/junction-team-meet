@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon server.js",
+    "dev": "nodemon src/server.js",
     "test": "jest"
   },
   "author": "alex-h",
@@ -14,6 +14,7 @@
     "axios": "^1.3.5",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-router": "^0.0.1",
     "mongoose": "^7.0.3",

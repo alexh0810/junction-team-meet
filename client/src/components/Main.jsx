@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { axiosInstance } from "../config/config";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
@@ -26,7 +27,6 @@ const ExpandMore = styled((props) => {
 
 const Main = () => {
   const [teamList, setTeamList] = useState([]);
-  //const [expanded, setExpanded] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState("");
   const navigate = useNavigate();
   const handleExpandClick = (teamId) => {
@@ -37,9 +37,7 @@ const Main = () => {
     }
   };
   const getAllTeams = () => {
-    axios
-      .get(`http://localhost:5500/teams`)
-      .then((res) => setTeamList(res.data));
+    axiosInstance.get("/teams").then((res) => setTeamList(res.data));
   };
   useEffect(() => {
     getAllTeams();

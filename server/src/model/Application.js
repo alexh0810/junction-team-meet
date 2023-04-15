@@ -1,6 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 const applicationSchema = new Schema({
-  team: {
+  team_id: {
     type: Schema.Types.ObjectId,
     ref: "Team",
   },

@@ -1,5 +1,5 @@
 import { Application } from "../model/Application.js";
-import { Team } from "../../model/Team.js";
+import { Team } from "../model/Team.js";
 import { createApplication } from "../services/ApplicationService.js";
 
 export const createNewApplication = async (req, res) => {
