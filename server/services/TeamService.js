@@ -1,7 +1,12 @@
-import Team from "../models/Team.js";
+import { Team } from "../model/Team.js";
 
-const getTeams = async () => {
-  return await Team.find();
+export const getTeams = async () => {
+  const teams = await Team.find();
+  console.log(teams);
+  return teams;
 };
 
-export default getTeams;
+export const getSingleTeam = async (teamId) => {
+  const team = await Team.findById(teamId);
+  return team;
+};

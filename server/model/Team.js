@@ -1,9 +1,5 @@
 import mongoose, { Schema } from "mongoose";
 const teamSchema = new Schema({
-  id: {
-    type: Number,
-    required: true,
-  },
   name: {
     type: String,
     required: true,
@@ -26,5 +22,4 @@ const teamSchema = new Schema({
     required: true,
   },
 });
-const Team = mongoose.model("Team", teamSchema);
-export default Team;
+export const Team = mongoose.model("Team", teamSchema);

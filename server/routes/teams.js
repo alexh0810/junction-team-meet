@@ -1,7 +1,10 @@
 import { Router } from "express";
-import teamController from "../controllers/teamController.js";
+import { createNewApplication } from "../controllers/applicationController.js";
+import { getAllTeams, getTeamById } from "../controllers/teamController.js";
 
 const teams = Router();
-teams.get("/teams", teamController.getAllTeams());
+teams.get("", getAllTeams);
+teams.get("/:id", getTeamById)
+teams.post("/apply/:id", createNewApplication)
 
 export default teams;
