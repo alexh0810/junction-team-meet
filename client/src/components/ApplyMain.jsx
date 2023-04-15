@@ -6,8 +6,6 @@ import { Card, CardContent } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import HomeIcon from "@mui/icons-material/Home";
-import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 
 const ApplyMain = () => {
   const [hasNotSentApplication, setHasNotSentApplication] = useState(true);

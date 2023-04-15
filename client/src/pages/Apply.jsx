@@ -1,12 +1,11 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import ApplyMain from "../components/ApplyMain";
-import NavBar from '../components/NavBar'
+import NavBar from "../components/NavBar";
 
 const Apply = () => {
   return (
     <div>
-      <NavBar />
-      <ApplyMain/>
+      <ApplyMain />
     </div>
   );
 };

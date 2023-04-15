@@ -4,8 +4,7 @@ import NavBar from "../components/NavBar";
 
 const Home = () => {
   return (
-    <div>
-      <NavBar />
+    <div data-testid="home">
       <Main />
     </div>
   );
