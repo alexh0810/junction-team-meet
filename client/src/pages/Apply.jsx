@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import ApplyMain from "../components/ApplyMain";
-import NavBar from "../components/NavBar";
 
 const Apply = () => {
   return (

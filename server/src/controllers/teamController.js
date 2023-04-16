@@ -5,7 +5,7 @@ export const getAllTeams = async (req, res) => {
     const teams = await getTeams();
     return res.json(teams);
   } catch (e) {
-    console.log(e);
+    return res.status(500).json("Internal server error, cannot get teams");
   }
 };
 
@@ -13,8 +13,12 @@ export const getTeamById = async (req, res) => {
   const teamId = req.params.id;
   try {
     const team = await getSingleTeam(teamId);
-    return res.json(team);
+    if (team) {
+      return res.json(team);
+    } else {
+      return res.status(404).json(`Cannot find team with ${teamId}`)
+    }
   } catch (e) {
-    console.log(e);
+    return res.status(500).json("Internal server error, cannot get team");
   }
 };

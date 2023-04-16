@@ -4,7 +4,6 @@ import mongoose from "mongoose";
 
 dotenv.config();
 const URI = process.env.DB_URI;
-console.log(URI);
 
 mongoose.connect(`${URI}`).catch((err) => {
   console.log(

@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -15,16 +14,14 @@ const ApplyMain = () => {
   const [hasNotSentApplication, setHasNotSentApplication] = useState(true);
   const [message, setMessage] = useState("");
   let { teamId } = useParams();
-  console.log(teamId);
   const team = useGetTeam(teamId);
-  console.log(team);
 
   const sendApplication = () => {
     setHasNotSentApplication(false);
     axiosInstance
       .post(`teams/apply/${teamId}`, {
         teamId: teamId,
-        user_id: "123",
+        user_id: "123", // TODO: get real user_id after auth
         message: message,
       })
       .then((res) => console.log(res.data));

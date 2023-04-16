@@ -15,9 +15,11 @@ export const createNewApplication = async (req, res) => {
       const application = await createApplication(newApplication);
       return res.status(201).json(application);
     } else {
-      console.log("Cannot create new application");
+      return res.status(400).json(`Invalid team ${team_id.id}`);
     }
   } catch (e) {
-    console.log(e);
+    return res
+      .status(500)
+      .json(`Internal server error, cannot save application`);
   }
 };
